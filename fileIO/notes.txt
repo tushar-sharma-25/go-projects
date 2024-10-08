@@ -1,0 +1,24 @@
+go routines -> lighweight threads (concurrent programming) 2KB
+regular threads (java) -> 2K KB
+
+managed by go run time vs os
+routines != threads (less no usually equal to cpu threads , managed by os)
+no of routines >> no of threads
+
+when main function returns all go routines are terminated 
+
+Channels -> communication/synchronization btw go routines (prevent data races)
+
+select -> work with multiple channels concurrently
+
+wait groups -> wait for go routines to finish before proceeding
+
+defer -> execute the function call after the surronding function (parent) gets completed
+        delay the call untill everything is completed
+
+        --> use to close resources (Db connections, file close, release lock in concurrent programming)
+        --> FIFO , last defer statement is executed first
+
+
+net package 
+    interface for TCP/IP, UDP , unix sockets
